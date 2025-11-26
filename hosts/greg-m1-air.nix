@@ -10,15 +10,20 @@
   networking.computerName = "Greg's M1 Air";
 
   # ============================================================================
+  # PRIMARY USER
+  # ============================================================================
+  # This is required for system defaults and Homebrew to work properly
+  system.primaryUser = "greg";
+
+  # ============================================================================
   # NIX PACKAGES (Greg's M1 Air specific)
   # ============================================================================
   environment.systemPackages = with pkgs; [
     # Development tools
     vscode          # Visual Studio Code
     
-    # Video tools
-    handbrake       # Video transcoder
-    
+    # Note: Handbrake is marked as broken in nixpkgs
+    # It will be installed via Homebrew cask below
     # Note: MakeMKV is not available in Nix
     # It will be installed via Homebrew cask below
   ];
@@ -29,6 +34,7 @@
   homebrew = {
     # Additional casks for this machine
     casks = [
+      "handbrake"         # Video transcoder (broken in Nix, using Homebrew)
       "makemkv"           # DVD/Blu-ray ripper
     ];
 

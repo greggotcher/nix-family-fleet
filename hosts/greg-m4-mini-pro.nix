@@ -22,9 +22,8 @@
     # Development tools
     vscode          # Visual Studio Code (available in Nix)
     
-    # Video tools
-    handbrake       # Video transcoder (available in Nix)
-    
+    # Note: Handbrake is marked as broken in nixpkgs
+    # It will be installed via Homebrew cask below
     # Note: DaVinci Resolve and MakeMKV are not available in Nix
     # They will be installed via Homebrew casks below
   ];
@@ -36,9 +35,8 @@
     # Additional casks for this machine
     casks = [
       "davinci-resolve"   # Professional video editing software
+      "handbrake"         # Video transcoder (broken in Nix, using Homebrew)
       "makemkv"           # DVD/Blu-ray ripper
-      
-      # Note: Handbrake and VS Code are installed via Nix above for better integration
     ];
 
     # Additional App Store apps for this machine
