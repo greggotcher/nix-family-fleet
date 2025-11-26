@@ -124,8 +124,7 @@
         FXEnableExtensionChangeWarning = false; # Don't warn about extension changes
         FXPreferredViewStyle = "Nlsv";         # Set home folder to be a list view
         FXDefaultSearchScope = "SCcf";         # When performing a search: Search the current folder
-        NewWindowTarget = "PfHm";              # New Finder windows show: Home Directory
-        NewWindowTargetPath = "file:///Users/"; # Path for new windows (will use user's home)
+        NewWindowTarget = "Home";              # New Finder windows show: Home Directory
         
         # Show on Desktop
         ShowExternalHardDrivesOnDesktop = true;  # External disks
