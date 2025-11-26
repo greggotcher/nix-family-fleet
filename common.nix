@@ -133,8 +133,8 @@
         ShowMountedServersOnDesktop = true;      # Connected servers
         ShowRemovableMediaOnDesktop = true;      # CDs, DVDs, and iPods
         
-        # Open folders in tabs instead of new windows
-        FinderSpawnTab = true;
+        # Note: "Open folders in tabs" must be set manually in Finder preferences
+        # as FinderSpawnTab is not available in nix-darwin
       };
 
       # -----------------------------------------------------------------------
@@ -165,6 +165,9 @@
         
         # Click in the scroll bar to: Jump to the spot that's clicked
         AppleScrollerPagingBehavior = true;
+        
+        # Turn OFF: Natural Scrolling
+        "com.apple.swipescrolldirection" = false;
       };
 
       # -----------------------------------------------------------------------
@@ -173,14 +176,6 @@
       trackpad = {
         Clicking = true;                       # Enable tap to click
         TrackpadRightClick = true;             # Enable two-finger right click
-      };
-
-      # -----------------------------------------------------------------------
-      # SCROLLING SETTINGS
-      # -----------------------------------------------------------------------
-      NSGlobalDomain = {
-        # Turn OFF: Natural Scrolling
-        "com.apple.swipescrolldirection" = false;
       };
     };
 
