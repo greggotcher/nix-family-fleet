@@ -19,6 +19,9 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, config, ... }: {
+      # Set the system architecture for Apple Silicon
+      nixpkgs.hostPlatform = "aarch64-darwin";
+
       # Import the common configuration
       imports = [ ./common.nix ];
 
