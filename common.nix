@@ -17,10 +17,8 @@
     tree          # Directory visualization
     jq            # JSON processor
     
-    # Common applications for all users (installed via Nix when possible)
-    # Note: VLC and LibreOffice work well via Nix
-    vlc           # Media player
-    libreoffice   # Office suite
+    # Note: VLC and LibreOffice are not available for macOS in nixpkgs
+    # They will be installed via Homebrew casks below
   ];
 
   # ============================================================================
@@ -58,7 +56,8 @@
     # Common GUI apps for all users
     casks = [
       "google-chrome"    # Web browser (default for all users)
-      # Note: VLC and LibreOffice are installed via Nix above
+      "vlc"              # Media player (not available for macOS in nixpkgs)
+      "libreoffice"      # Office suite (not available for macOS in nixpkgs)
     ];
 
     # -------------------------------------------------------------------------
