@@ -71,14 +71,8 @@
   # ============================================================================
   # NIX CONFIGURATION
   # ============================================================================
-  # Nix configuration settings
-  nix.settings = {
-    # Enable experimental features (needed for flakes)
-    experimental-features = "nix-command flakes";
-  };
-
-  # Automatic Nix store optimization
-  nix.optimise.automatic = true;
+  # Disable nix-darwin's Nix management (using Determinate Nix installer)
+  nix.enable = false;
 
   # Allow unfree packages in nixpkgs
   nixpkgs.config.allowUnfree = true;
