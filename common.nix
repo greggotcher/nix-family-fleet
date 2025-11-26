@@ -72,17 +72,14 @@
   # ============================================================================
   # NIX CONFIGURATION
   # ============================================================================
-  # Enable the Nix daemon (required for nix-darwin)
-  services.nix-daemon.enable = true;
-
   # Nix configuration settings
   nix.settings = {
     # Enable experimental features (needed for flakes)
     experimental-features = "nix-command flakes";
-    
-    # Optimize storage by hard-linking identical files
-    auto-optimise-store = true;
   };
+
+  # Automatic Nix store optimization
+  nix.optimise.automatic = true;
 
   # Allow unfree packages in nixpkgs
   nixpkgs.config.allowUnfree = true;
@@ -181,15 +178,4 @@
     # This should match your nix-darwin version
     stateVersion = 5;
   };
-
-  # ============================================================================
-  # ADDITIONAL SYSTEM CONFIGURATION
-  # ============================================================================
-  # Set Google Chrome as the default browser for all users
-  # Note: Users may need to confirm this setting the first time they open Chrome
-  system.activationScripts.postUserActivation.text = ''
-    # Set Google Chrome as default browser
-    # This will prompt the user to confirm on first run
-    echo "Google Chrome is installed. Set it as default browser in System Settings if needed."
-  '';
 }

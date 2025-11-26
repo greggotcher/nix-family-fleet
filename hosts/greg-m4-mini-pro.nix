@@ -10,6 +10,12 @@
   networking.computerName = "Greg's M4 Mini Pro";
 
   # ============================================================================
+  # PRIMARY USER
+  # ============================================================================
+  # This is required for system defaults and Homebrew to work properly
+  system.primaryUser = "greg";
+
+  # ============================================================================
   # NIX PACKAGES (Greg's M4 Mini Pro specific)
   # ============================================================================
   environment.systemPackages = with pkgs; [
