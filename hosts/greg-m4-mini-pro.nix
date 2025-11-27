@@ -19,7 +19,7 @@
   # SYSTEM DEFAULTS (Greg's M4 Mini Pro specific overrides)
   # ============================================================================
   system.defaults.dock = {
-    tilesize = 64;         # Larger icon size (override common.nix default of 48)
+    tilesize = 80;         # Larger icon size (override common.nix default of 48, common values are 32, 48, 64, 80, or 128.)
   };
 
   # ============================================================================
