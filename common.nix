@@ -58,6 +58,7 @@
       "google-chrome"    # Web browser (default for all users)
       "vlc"              # Media player (not available for macOS in nixpkgs)
       "libreoffice"      # Office suite (not available for macOS in nixpkgs)
+      "tailscale"        # VPN mesh network for all computers
     ];
 
     # -------------------------------------------------------------------------
