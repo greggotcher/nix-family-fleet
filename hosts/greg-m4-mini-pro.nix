@@ -20,12 +20,13 @@
   # ============================================================================
   system.defaults.dock = {
     autohide = false;      # Don't auto-hide the dock
-    tilesize = 80;         # Larger icon size
+    tilesize = 80;         # Larger icon size (80px)
     
     # Dock applications (in order)
+    # Note: Finder is always present and should not be added here
     persistent-apps = [
-      "/System/Applications/Finder.app"
       "/Applications/Google Chrome.app"
+      "/Applications/Visual Studio Code.app"
       "/System/Applications/Messages.app"
       "/System/Applications/Reminders.app"
       "/System/Applications/Notes.app"
