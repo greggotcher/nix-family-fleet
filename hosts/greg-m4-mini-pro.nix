@@ -19,7 +19,8 @@
   # SYSTEM DEFAULTS (Greg's M4 Mini Pro specific overrides)
   # ============================================================================
   system.defaults.dock = {
-    tilesize = 80;         # Larger icon size (override common.nix default of 48, common values are 32, 48, 64, 80, or 128.)
+    autohide = false;      # Don't auto-hide the dock (override common.nix)
+    tilesize = 80;         # Larger icon size (override common.nix default of 48)
   };
 
   # ============================================================================
@@ -29,8 +30,10 @@
     # Development tools
     vscode          # Visual Studio Code (available in Nix)
     
-    # Note: Handbrake, DaVinci Resolve and MakeMKV are not available in Nix
+    # Note: Handbrake and MakeMKV are not available in Nix
     # They will be installed via Homebrew casks below
+    # Note: DaVinci Resolve Studio must be downloaded manually from:
+    # https://www.blackmagicdesign.com/products/davinciresolve
   ];
 
   # ============================================================================
@@ -39,11 +42,11 @@
   homebrew = {
     # Additional casks for this machine
     casks = [
-      "davinci-resolve-studio"   # Professional video editing software (use studio version)
-      "handbrake-app"            # Video transcoder (renamed from handbrake)
+      "handbrake-app"            # Video transcoder
       "makemkv"                  # DVD/Blu-ray ripper
       
-      # Note: VS Code is installed via Nix above for better integration
+      # Note: DaVinci Resolve Studio is not available via Homebrew
+      # Download manually from Blackmagic Design website
     ];
 
     # Additional App Store apps for this machine
