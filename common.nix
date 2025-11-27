@@ -1,6 +1,6 @@
 # common.nix
 # This file contains configuration shared across ALL your Mac systems
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # ============================================================================
@@ -99,7 +99,7 @@
         autohide = false;                     # Don't auto-hide the dock
         orientation = "bottom";                # Dock position
         show-recents = false;                  # Turn OFF: Show suggested and recent apps in Dock
-        tilesize = 48;                         # Icon size (can be overridden per-host)
+        tilesize = lib.mkDefault 48;           # Icon size (can be overridden per-host)
         minimize-to-application = true;        # Turn ON: Minimize windows into application icon
         mineffect = "scale";                   # Minimize Window Animation: Scale Effect
       };
