@@ -25,6 +25,7 @@
     # Dock applications (in order)
     # Note: Finder is always present and should not be added here
     persistent-apps = [
+      "/Applications/DaVinci Resolve.app"
       "/Applications/Google Chrome.app"
       "/Applications/Nix Apps/Visual Studio Code.app"
       "/System/Applications/Messages.app"
