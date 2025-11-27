@@ -26,7 +26,7 @@
     # Note: Finder is always present and should not be added here
     persistent-apps = [
       "/Applications/Google Chrome.app"
-      "/Applications/Visual Studio Code.app"
+      "/Applications/Nix Apps/Visual Studio Code.app"
       "/System/Applications/Messages.app"
       "/System/Applications/Reminders.app"
       "/System/Applications/Notes.app"
