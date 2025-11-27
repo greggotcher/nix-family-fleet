@@ -19,8 +19,20 @@
   # SYSTEM DEFAULTS (Greg's M4 Mini Pro specific overrides)
   # ============================================================================
   system.defaults.dock = {
-    autohide = false;      # Don't auto-hide the dock (override common.nix)
-    tilesize = 80;         # Larger icon size (override common.nix default of 48)
+    autohide = false;      # Don't auto-hide the dock
+    tilesize = 80;         # Larger icon size
+    
+    # Dock applications (in order)
+    persistent-apps = [
+      "/System/Applications/Finder.app"
+      "/Applications/Google Chrome.app"
+      "/System/Applications/Messages.app"
+      "/System/Applications/Reminders.app"
+      "/System/Applications/Notes.app"
+      "/System/Applications/iPhone Mirroring.app"
+      "/System/Applications/System Settings.app"
+      "/System/Applications/Utilities/Terminal.app"
+    ];
   };
 
   # ============================================================================
