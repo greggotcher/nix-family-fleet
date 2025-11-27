@@ -16,15 +16,20 @@
   system.primaryUser = "greg";
 
   # ============================================================================
+  # SYSTEM DEFAULTS (Greg's M4 Mini Pro specific overrides)
+  # ============================================================================
+  system.defaults.dock = {
+    tilesize = 64;         # Larger icon size (override common.nix default of 48)
+  };
+
+  # ============================================================================
   # NIX PACKAGES (Greg's M4 Mini Pro specific)
   # ============================================================================
   environment.systemPackages = with pkgs; [
     # Development tools
     vscode          # Visual Studio Code (available in Nix)
     
-    # Note: Handbrake is marked as broken in nixpkgs
-    # It will be installed via Homebrew cask below
-    # Note: DaVinci Resolve and MakeMKV are not available in Nix
+    # Note: Handbrake, DaVinci Resolve and MakeMKV are not available in Nix
     # They will be installed via Homebrew casks below
   ];
 
@@ -34,9 +39,11 @@
   homebrew = {
     # Additional casks for this machine
     casks = [
-      "davinci-resolve"   # Professional video editing software
-      "handbrake"         # Video transcoder (broken in Nix, using Homebrew)
-      "makemkv"           # DVD/Blu-ray ripper
+      "davinci-resolve-studio"   # Professional video editing software (use studio version)
+      "handbrake-app"            # Video transcoder (renamed from handbrake)
+      "makemkv"                  # DVD/Blu-ray ripper
+      
+      # Note: VS Code is installed via Nix above for better integration
     ];
 
     # Additional App Store apps for this machine
