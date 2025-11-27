@@ -31,13 +31,13 @@ Follow these steps to set up nix-darwin on each Mac:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-
+```
 ### 2. Clone This Repository
 
 ```bash
 git clone https://github.com/greggotcher/nix-family-fleet.git ~/Documents/GitHub/nix-config
 cd ~/Documents/GitHub/nix-config
-
+```
 ### 3. Run the Configuration
 
 ```bash
@@ -51,6 +51,6 @@ sudo nix run nix-darwin -- switch --flake .#<hostname>
 # sudo nix run nix-darwin -- switch --flake .#gabe-m1-air
 # sudo nix run nix-darwin -- switch --flake .#michael-m1-air
 # sudo nix run nix-darwin -- switch --flake .#kat-m1-air
-
+```
 ### 4. Restart Your Terminal
 After the initial installation, close and reopen your terminal to load the new environment.
