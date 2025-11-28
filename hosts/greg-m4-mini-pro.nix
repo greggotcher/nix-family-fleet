@@ -78,6 +78,19 @@
     };
   };
 
+  launchd.user.agents.mountVideoProjectsShare = {
+    serviceConfig = {
+      ProgramArguments = [
+        "/usr/bin/osascript"
+        "-e"
+        "mount volume \"smb://10.250.1.1/video_projects\""
+      ];
+      RunAtLoad = true;
+      StandardErrorPath = "/tmp/mount-video-projects-share.err";
+      StandardOutPath = "/tmp/mount-video-projects-share.out";
+    };
+  };
+
   # ============================================================================
   # NIX PACKAGES (Greg's M4 Mini Pro specific)
   # ============================================================================
