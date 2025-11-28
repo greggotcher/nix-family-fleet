@@ -44,6 +44,7 @@
     # Development tools
     vscode          # Visual Studio Code (available in Nix)
     jre             # Java Runtime Environment (latest version, runtime only)
+    handbrake
     
     # Note: Handbrake and MakeMKV are not available in Nix
     # They will be installed via Homebrew casks below
