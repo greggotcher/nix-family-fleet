@@ -38,6 +38,40 @@
   };
 
   # ============================================================================
+  # POWER MANAGEMENT
+  # ============================================================================
+  # Automatically restart after power failure
+  system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
+  
+  # Note: Auto-restart after power failure must be set via pmset command
+  # Run this manually once: sudo pmset -a autorestart 1
+  
+  # Sleep settings (in minutes, 0 = never)
+  # These can be set via activation script
+  system.activationScripts.postUserActivation.text = ''
+    # Restart automatically after power failure
+    /usr/bin/pmset -a autorestart 1
+    
+    # Display sleep after 30 minutes
+    /usr/bin/pmset -a displaysleep 30
+    
+    # Computer sleep after 60 minutes (0 = never)
+    /usr/bin/pmset -a sleep 60
+    
+    # Disk sleep after 30 minutes (0 = never)
+    /usr/bin/pmset -a disksleep 30
+    
+    # Wake for network access (useful for remote access)
+    /usr/bin/pmset -a womp 1
+    
+    # Wake when iPhone/Apple Watch is nearby
+    /usr/bin/pmset -a proximitywake 1
+    
+    # Don't put hard disks to sleep when possible
+    # /usr/bin/pmset -a disksleep 0
+  '';
+
+  # ============================================================================
   # NIX PACKAGES (Greg's M4 Mini Pro specific)
   # ============================================================================
   environment.systemPackages = with pkgs; [
