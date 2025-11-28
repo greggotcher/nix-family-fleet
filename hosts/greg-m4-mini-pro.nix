@@ -40,14 +40,7 @@
   # ============================================================================
   # POWER MANAGEMENT
   # ============================================================================
-  # Automatically restart after power failure
-  system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
-  
-  # Note: Auto-restart after power failure must be set via pmset command
-  # Run this manually once: sudo pmset -a autorestart 1
-  
   # Sleep settings (in minutes, 0 = never)
-  # These can be set via activation script
   system.activationScripts.postUserActivation.text = ''
     # Restart automatically after power failure
     /usr/bin/pmset -a autorestart 1
@@ -64,9 +57,26 @@
     # Wake for network access (useful for remote access)
     /usr/bin/pmset -a womp 1
     
-    # Don't put hard disks to sleep when possible
-    # /usr/bin/pmset -a disksleep 0
+    # Wake when iPhone/Apple Watch is nearby
+    /usr/bin/pmset -a proximitywake 1
   '';
+
+  # ============================================================================
+  # NETWORK MOUNTS
+  # ============================================================================
+  # Automatically mount network drives at login
+  launchd.user.agents.mountMoviesShare = {
+    serviceConfig = {
+      ProgramArguments = [
+        "/usr/bin/osascript"
+        "-e"
+        "mount volume \"smb://10.250.1.1/movies\""
+      ];
+      RunAtLoad = true;
+      StandardErrorPath = "/tmp/mount-movies-share.err";
+      StandardOutPath = "/tmp/mount-movies-share.out";
+    };
+  };
 
   # ============================================================================
   # NIX PACKAGES (Greg's M4 Mini Pro specific)
