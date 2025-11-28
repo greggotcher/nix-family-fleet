@@ -64,9 +64,6 @@
     # Wake for network access (useful for remote access)
     /usr/bin/pmset -a womp 1
     
-    # Wake when iPhone/Apple Watch is nearby
-    /usr/bin/pmset -a proximitywake 1
-    
     # Don't put hard disks to sleep when possible
     # /usr/bin/pmset -a disksleep 0
   '';
