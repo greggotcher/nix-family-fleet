@@ -57,7 +57,7 @@
   homebrew = {
     # Additional casks for this machine
     casks = [
-      "handbrake-app"            # Video transcoder
+      # "handbrake-app"            # Video transcoder
       "makemkv"                  # DVD/Blu-ray ripper
       
       # Note: DaVinci Resolve Studio is not available via Homebrew
