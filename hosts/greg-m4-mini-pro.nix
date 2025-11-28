@@ -44,7 +44,6 @@
     # Development tools
     vscode          # Visual Studio Code (available in Nix)
     jre             # Java Runtime Environment (latest version, runtime only)
-    handbrake
     
     # Note: Handbrake and MakeMKV are not available in Nix
     # They will be installed via Homebrew casks below
@@ -58,7 +57,7 @@
   homebrew = {
     # Additional casks for this machine
     casks = [
-      # "handbrake-app"            # Video transcoder
+      "handbrake-app"            # Video transcoder
       "makemkv"                  # DVD/Blu-ray ripper
       
       # Note: DaVinci Resolve Studio is not available via Homebrew
