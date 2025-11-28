@@ -41,7 +41,7 @@
   # POWER MANAGEMENT
   # ============================================================================
   # Sleep settings (in minutes, 0 = never)
-  system.activationScripts.postUserActivation.text = ''
+  system.activationScripts.postActivation.text = ''
     # Restart automatically after power failure
     /usr/bin/pmset -a autorestart 1
     
