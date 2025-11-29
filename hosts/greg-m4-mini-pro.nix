@@ -73,6 +73,8 @@
         "mount volume \"smb://10.250.1.1/movies\""
       ];
       RunAtLoad = true;
+      KeepAlive = false;
+      LaunchOnlyOnce = true;
       StandardErrorPath = "/tmp/mount-movies-share.err";
       StandardOutPath = "/tmp/mount-movies-share.out";
     };
@@ -86,6 +88,8 @@
         "mount volume \"smb://10.250.1.1/video_projects\""
       ];
       RunAtLoad = true;
+      KeepAlive = false;
+      LaunchOnlyOnce = true;
       StandardErrorPath = "/tmp/mount-video-projects-share.err";
       StandardOutPath = "/tmp/mount-video-projects-share.out";
     };
