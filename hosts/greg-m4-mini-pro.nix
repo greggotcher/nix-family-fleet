@@ -117,6 +117,7 @@
     casks = [
       "handbrake-app"            # Video transcoder
       "makemkv"                  # DVD/Blu-ray ripper
+      "affinity"                 # Affinity V3 (unified Designer, Photo, Publisher)
       
       # Note: DaVinci Resolve Studio is not available via Homebrew
       # Download manually from Blackmagic Design website
