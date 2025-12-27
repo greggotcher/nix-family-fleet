@@ -16,8 +16,8 @@
     # Development tools
     vscode                    # Visual Studio Code
 
-    # Java Development Kit (includes JRE)
-    jdk                       # Latest Java JDK
+    # Java Runtime Environment
+    jre                       # Java Runtime Environment (latest version, runtime only)
   ];
 
   # ============================================================================
