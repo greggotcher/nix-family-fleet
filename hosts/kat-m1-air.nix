@@ -1,45 +1,50 @@
 # hosts/kat-m1-air.nix
-# Configuration for Kat's MacBook Air
+# Configuration specific to Katarina's M1 MacBook Air
 { pkgs, ... }:
-
 {
-  # ============================================================================
-  # SYSTEM IDENTIFICATION
-  # ============================================================================
+  # Import common configuration
+  imports = [ ../common.nix ];
+
+  # Set the hostname
   networking.hostName = "kat-m1-air";
-  networking.computerName = "Kat's MacBook Air";
+  networking.computerName = "Katarina's M1 Air";
 
   # ============================================================================
-  # PRIMARY USER
-  # ============================================================================
-  system.primaryUser = "kat";
-
-  # ============================================================================
-  # NIX PACKAGES (Kat's M1 Air specific)
+  # KATARINA-SPECIFIC NIX PACKAGES
   # ============================================================================
   environment.systemPackages = with pkgs; [
-    # Add Kat's specific packages here
-    # Common apps (Chrome, VLC, LibreOffice) are already in common.nix
+    # Add any Katarina-specific packages here
   ];
 
   # ============================================================================
-  # HOMEBREW (Kat's M1 Air specific)
+  # KATARINA-SPECIFIC HOMEBREW PACKAGES
   # ============================================================================
   homebrew = {
-    brews = [];
+    # Additional casks for Katarina's M1 Air
     casks = [
-      # Add Kat's specific apps here
+      # Add any Katarina-specific applications here
     ];
-    masApps = {
-      # Add Kat's App Store apps here
-    };
   };
 
   # ============================================================================
-  # USER CONFIGURATION
+  # SYSTEM-SPECIFIC SETTINGS
   # ============================================================================
-  users.users.kat = {
-    home = "/Users/kat";
-    description = "Kat";
+  # Dock configuration for Katarina's M1 Air
+  system.defaults.dock = {
+    # Use default dock settings from common.nix
+    # (autohide = false, tilesize = 48)
+    
+    # Persistent apps in the Dock
+    persistent-apps = [
+      "/System/Applications/Pages.app"
+      "/System/Applications/Keynote.app"
+      "/Applications/Safari.app"
+      "/System/Applications/Messages.app"
+      "/System/Applications/Reminders.app"
+      "/System/Applications/Notes.app"
+    ];
   };
+
+  # Enable Rosetta 2 for Intel app compatibility
+  # (Already configured in flake.nix)
 }
