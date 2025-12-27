@@ -43,8 +43,8 @@
     
     # Persistent apps in the Dock
     persistent-apps = [
-      "/System/Applications/Pages.app"
-      "/System/Applications/Keynote.app"
+      "/Applications/Pages.app"
+      "/Applications/Keynote.app"
       "/Applications/Safari.app"
       "/System/Applications/Messages.app"
       "/System/Applications/Reminders.app"
