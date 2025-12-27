@@ -1,7 +1,6 @@
 # common.nix
 # This file contains configuration shared across ALL your Mac systems
 { pkgs, lib, ... }:
-
 {
   # ============================================================================
   # NIX PACKAGES (First Priority)
@@ -9,14 +8,14 @@
   # These are installed via Nix and are preferred whenever available
   environment.systemPackages = with pkgs; [
     # Essential command-line tools
-    vim           # Text editor
-    git           # Version control
-    curl          # Download tool
-    wget          # Another download tool
-    htop          # System monitor
-    tree          # Directory visualization
-    jq            # JSON processor
-    
+    vim              # Text editor
+    git              # Version control
+    curl             # Download tool
+    wget             # Another download tool
+    htop             # System monitor
+    tree             # Directory visualization
+    jq               # JSON processor
+
     # Note: VLC and LibreOffice are not available for macOS in nixpkgs
     # They will be installed via Homebrew casks below
   ];
@@ -28,7 +27,7 @@
   # or when they work better through Homebrew on macOS
   homebrew = {
     enable = true;
-    
+
     # Update Homebrew and upgrade packages on activation
     onActivation = {
       autoUpdate = true;
@@ -47,7 +46,7 @@
     # HOMEBREW FORMULAE (command-line tools)
     # -------------------------------------------------------------------------
     brews = [
-      "mas"  # Mac App Store CLI (useful for automation)
+      "mas"          # Mac App Store CLI (useful for automation)
     ];
 
     # -------------------------------------------------------------------------
@@ -55,18 +54,21 @@
     # -------------------------------------------------------------------------
     # Common GUI apps for all users
     casks = [
-      "google-chrome"    # Web browser (default for all users)
-      "vlc"              # Media player (not available for macOS in nixpkgs)
-      "libreoffice"      # Office suite (not available for macOS in nixpkgs)
-      "tailscale-app"    # VPN mesh network for all computers
-      "microsoft-remote-desktop"  # RDP client for Windows machines
+      "google-chrome"           # Web browser (default for all users)
+      "vlc"                     # Media player (not available for macOS in nixpkgs)
+      "libreoffice"             # Office suite (not available for macOS in nixpkgs)
+      "tailscale-app"           # VPN mesh network for all computers
+      "microsoft-remote-desktop" # RDP client for Windows machines
     ];
 
     # -------------------------------------------------------------------------
     # MAC APP STORE APPS (Third Priority)
     # -------------------------------------------------------------------------
     masApps = {
-      # Add common App Store apps here if needed
+      # Apple iWork Suite (for all users)
+      "Pages" = 409201541;      # Word processor
+      "Numbers" = 409203825;    # Spreadsheet
+      "Keynote" = 409183694;    # Presentations
     };
   };
 
@@ -98,32 +100,32 @@
       # DOCK SETTINGS
       # -----------------------------------------------------------------------
       dock = {
-        autohide = false;                     # Don't auto-hide the dock
-        orientation = "bottom";                # Dock position
-        show-recents = false;                  # Turn OFF: Show suggested and recent apps in Dock
-        tilesize = lib.mkDefault 48;           # Icon size (can be overridden per-host)
-        minimize-to-application = true;        # Turn ON: Minimize windows into application icon
-        mineffect = "scale";                   # Minimize Window Animation: Scale Effect
+        autohide = false;                    # Don't auto-hide the dock
+        orientation = "bottom";              # Dock position
+        show-recents = false;                # Turn OFF: Show suggested and recent apps in Dock
+        tilesize = lib.mkDefault 48;         # Icon size (can be overridden per-host)
+        minimize-to-application = true;      # Turn ON: Minimize windows into application icon
+        mineffect = "scale";                 # Minimize Window Animation: Scale Effect
       };
 
       # -----------------------------------------------------------------------
       # FINDER SETTINGS
       # -----------------------------------------------------------------------
       finder = {
-        AppleShowAllExtensions = true;         # Turn ON: Show all file extensions
-        ShowPathbar = true;                    # Go → Show Path Bar
-        ShowStatusBar = true;                  # View → Show Status Bar
+        AppleShowAllExtensions = true;       # Turn ON: Show all file extensions
+        ShowPathbar = true;                  # Go → Show Path Bar
+        ShowStatusBar = true;                # View → Show Status Bar
         FXEnableExtensionChangeWarning = false; # Don't warn about extension changes
-        FXPreferredViewStyle = "Nlsv";         # Set home folder to be a list view
-        FXDefaultSearchScope = "SCcf";         # When performing a search: Search the current folder
-        NewWindowTarget = "Home";              # New Finder windows show: Home Directory
-        
+        FXPreferredViewStyle = "Nlsv";       # Set home folder to be a list view
+        FXDefaultSearchScope = "SCcf";       # When performing a search: Search the current folder
+        NewWindowTarget = "Home";            # New Finder windows show: Home Directory
+
         # Show on Desktop
         ShowExternalHardDrivesOnDesktop = true;  # External disks
         ShowHardDrivesOnDesktop = false;         # Internal disks (typically off)
         ShowMountedServersOnDesktop = true;      # Connected servers
         ShowRemovableMediaOnDesktop = true;      # CDs, DVDs, and iPods
-        
+
         # Note: "Open folders in tabs" must be set manually in Finder preferences
         # as FinderSpawnTab is not available in nix-darwin
       };
@@ -134,29 +136,29 @@
       NSGlobalDomain = {
         # Disable automatic capitalization
         NSAutomaticCapitalizationEnabled = false;
-        
+
         # Disable smart dashes
         NSAutomaticDashSubstitutionEnabled = false;
-        
+
         # Disable automatic period substitution
         NSAutomaticPeriodSubstitutionEnabled = false;
-        
+
         # Disable smart quotes
         NSAutomaticQuoteSubstitutionEnabled = false;
-        
+
         # Enable full keyboard access for all controls
         AppleKeyboardUIMode = 3;
-        
+
         # Set fast key repeat rate
         KeyRepeat = 2;
         InitialKeyRepeat = 15;
-        
+
         # Show Scroll Bars: Always
         AppleShowScrollBars = "Always";
-        
+
         # Click in the scroll bar to: Jump to the spot that's clicked
         AppleScrollerPagingBehavior = true;
-        
+
         # Turn OFF: Natural Scrolling
         "com.apple.swipescrolldirection" = false;
       };
@@ -165,8 +167,8 @@
       # TRACKPAD SETTINGS
       # -----------------------------------------------------------------------
       trackpad = {
-        Clicking = true;                       # Enable tap to click
-        TrackpadRightClick = true;             # Enable two-finger right click
+        Clicking = true;                     # Enable tap to click
+        TrackpadRightClick = true;           # Enable two-finger right click
       };
     };
 
