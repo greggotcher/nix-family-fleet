@@ -1,45 +1,41 @@
 # hosts/steph-m1-air.nix
-# Configuration for Steph's MacBook Air
+# Configuration specific to Stephanie's M1 MacBook Air
 { pkgs, ... }:
-
 {
-  # ============================================================================
-  # SYSTEM IDENTIFICATION
-  # ============================================================================
+  # Import common configuration
+  imports = [ ../common.nix ];
+
+  # Set the hostname
   networking.hostName = "steph-m1-air";
-  networking.computerName = "Steph's MacBook Air";
+  networking.computerName = "Stephanie's M1 Air";
 
   # ============================================================================
-  # PRIMARY USER
-  # ============================================================================
-  system.primaryUser = "steph";
-
-  # ============================================================================
-  # NIX PACKAGES (Steph's M1 Air specific)
+  # STEPHANIE-SPECIFIC NIX PACKAGES
   # ============================================================================
   environment.systemPackages = with pkgs; [
-    # Add Steph's specific packages here
-    # Common apps (Chrome, VLC, LibreOffice) are already in common.nix
+    # Add any Stephanie-specific packages here
   ];
 
   # ============================================================================
-  # HOMEBREW (Steph's M1 Air specific)
+  # STEPHANIE-SPECIFIC HOMEBREW PACKAGES
   # ============================================================================
   homebrew = {
-    brews = [];
+    # Additional casks for Stephanie's M1 Air
     casks = [
-      # Add Steph's specific apps here
+      "google-chrome"         # Web browser
+      "libreoffice"           # Office suite
     ];
-    masApps = {
-      # Add Steph's App Store apps here
-    };
   };
 
   # ============================================================================
-  # USER CONFIGURATION
+  # SYSTEM-SPECIFIC SETTINGS
   # ============================================================================
-  users.users.steph = {
-    home = "/Users/steph";
-    description = "Steph";
+  # Dock configuration for Stephanie's M1 Air
+  system.defaults.dock = {
+    # Use default dock settings from common.nix
+    # (autohide = false, tilesize = 48)
   };
+
+  # Enable Rosetta 2 for Intel app compatibility
+  # (Already configured in flake.nix)
 }

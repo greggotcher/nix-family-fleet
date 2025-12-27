@@ -26,6 +26,8 @@
   homebrew = {
     # Additional casks for Greg's M1 Air
     casks = [
+      "google-chrome"         # Web browser
+      "libreoffice"           # Office suite
       "handbrake-app"         # Video transcoder
       "affinity"              # Affinity V3 (unified Designer, Photo, Publisher)
     ];

@@ -1,45 +1,41 @@
 # hosts/gabe-m1-air.nix
-# Configuration for Gabe's MacBook Air
+# Configuration specific to Gabe's M1 MacBook Air
 { pkgs, ... }:
-
 {
-  # ============================================================================
-  # SYSTEM IDENTIFICATION
-  # ============================================================================
+  # Import common configuration
+  imports = [ ../common.nix ];
+
+  # Set the hostname
   networking.hostName = "gabe-m1-air";
-  networking.computerName = "Gabe's MacBook Air";
+  networking.computerName = "Gabe's M1 Air";
 
   # ============================================================================
-  # PRIMARY USER
-  # ============================================================================
-  system.primaryUser = "gabe";
-
-  # ============================================================================
-  # NIX PACKAGES (Gabe's M1 Air specific)
+  # GABE-SPECIFIC NIX PACKAGES
   # ============================================================================
   environment.systemPackages = with pkgs; [
-    # Add Gabe's specific packages here
-    # Common apps (Chrome, VLC, LibreOffice) are already in common.nix
+    # Add any Gabe-specific packages here
   ];
 
   # ============================================================================
-  # HOMEBREW (Gabe's M1 Air specific)
+  # GABE-SPECIFIC HOMEBREW PACKAGES
   # ============================================================================
   homebrew = {
-    brews = [];
+    # Additional casks for Gabe's M1 Air
     casks = [
-      # Add Gabe's specific apps here
+      "google-chrome"         # Web browser
+      "libreoffice"           # Office suite
     ];
-    masApps = {
-      # Add Gabe's App Store apps here
-    };
   };
 
   # ============================================================================
-  # USER CONFIGURATION
+  # SYSTEM-SPECIFIC SETTINGS
   # ============================================================================
-  users.users.gabe = {
-    home = "/Users/gabe";
-    description = "Gabe";
+  # Dock configuration for Gabe's M1 Air
+  system.defaults.dock = {
+    # Use default dock settings from common.nix
+    # (autohide = false, tilesize = 48)
   };
+
+  # Enable Rosetta 2 for Intel app compatibility
+  # (Already configured in flake.nix)
 }

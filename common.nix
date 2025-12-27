@@ -17,7 +17,7 @@
     jq               # JSON processor
 
     # Note: VLC and LibreOffice are not available for macOS in nixpkgs
-    # They will be installed via Homebrew casks below
+    # They will be installed via Homebrew casks in individual host configs
   ];
 
   # ============================================================================
@@ -54,9 +54,7 @@
     # -------------------------------------------------------------------------
     # Common GUI apps for all users
     casks = [
-      "google-chrome"           # Web browser (default for all users)
       "vlc"                     # Media player (not available for macOS in nixpkgs)
-      "libreoffice"             # Office suite (not available for macOS in nixpkgs)
       "tailscale-app"           # VPN mesh network for all computers
       "microsoft-remote-desktop" # RDP client for Windows machines
     ];
