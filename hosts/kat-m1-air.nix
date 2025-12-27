@@ -5,9 +5,16 @@
   # Import common configuration
   imports = [ ../common.nix ];
 
-  # Set the hostname
+  # ============================================================================
+  # SYSTEM IDENTIFICATION
+  # ============================================================================
   networking.hostName = "kat-m1-air";
   networking.computerName = "Katarina's M1 Air";
+
+  # ============================================================================
+  # PRIMARY USER
+  # ============================================================================
+  system.primaryUser = "katarina";
 
   # ============================================================================
   # KATARINA-SPECIFIC NIX PACKAGES
