@@ -1,54 +1,45 @@
 # hosts/greg-m1-air.nix
 # Configuration specific to Greg's M1 MacBook Air
 { pkgs, ... }:
-
 {
-  # ============================================================================
-  # SYSTEM IDENTIFICATION
-  # ============================================================================
+  # Import common configuration
+  imports = [ ../common.nix ];
+
+  # Set the hostname
   networking.hostName = "greg-m1-air";
   networking.computerName = "Greg's M1 Air";
 
   # ============================================================================
-  # PRIMARY USER
-  # ============================================================================
-  # This is required for system defaults and Homebrew to work properly
-  system.primaryUser = "greg";
-
-  # ============================================================================
-  # NIX PACKAGES (Greg's M1 Air specific)
+  # GREG-SPECIFIC NIX PACKAGES
   # ============================================================================
   environment.systemPackages = with pkgs; [
     # Development tools
-    vscode          # Visual Studio Code
-    
-    # Note: Handbrake is marked as broken in nixpkgs
-    # It will be installed via Homebrew cask below
-    # Note: MakeMKV is not available in Nix
-    # It will be installed via Homebrew cask below
+    vscode                    # Visual Studio Code
+
+    # Java Development Kit (includes JRE)
+    jdk                       # Latest Java JDK
   ];
 
   # ============================================================================
-  # HOMEBREW (Greg's M1 Air specific)
+  # GREG-SPECIFIC HOMEBREW PACKAGES
   # ============================================================================
   homebrew = {
-    # Additional casks for this machine
+    # Additional casks for Greg's M1 Air
     casks = [
-      "handbrake"         # Video transcoder (broken in Nix, using Homebrew)
-      "makemkv"           # DVD/Blu-ray ripper
+      "handbrake-app"         # Video transcoder
+      "affinity"              # Affinity V3 (unified Designer, Photo, Publisher)
     ];
-
-    # Additional App Store apps for this machine
-    masApps = {
-      # Add App Store apps specific to this machine if needed
-    };
   };
 
   # ============================================================================
-  # USER CONFIGURATION
+  # SYSTEM-SPECIFIC SETTINGS
   # ============================================================================
-  users.users.greg = {
-    home = "/Users/greg";
-    description = "Greg";
+  # Dock configuration for Greg's M1 Air
+  system.defaults.dock = {
+    # Use default dock settings from common.nix
+    # (autohide = false, tilesize = 48)
   };
+
+  # Enable Rosetta 2 for Intel app compatibility
+  # (Already configured in flake.nix)
 }
