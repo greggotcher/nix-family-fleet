@@ -37,6 +37,7 @@
       "libreoffice"           # Office suite
       "handbrake-app"         # Video transcoder
       "affinity"              # Affinity V3 (unified Designer, Photo, Publisher)
+      "microsoft-remote-desktop" # RDP client for Windows machines
     ];
   };
 

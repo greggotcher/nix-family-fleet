@@ -56,7 +56,6 @@
     casks = [
       "vlc"                     # Media player (not available for macOS in nixpkgs)
       "tailscale-app"           # VPN mesh network for all computers
-      "microsoft-remote-desktop" # RDP client for Windows machines
     ];
 
     # -------------------------------------------------------------------------
