@@ -5,9 +5,17 @@
   # Import common configuration
   imports = [ ../common.nix ];
 
-  # Set the hostname
+
+  # ============================================================================
+  # SYSTEM IDENTIFICATION
+  # ============================================================================
   networking.hostName = "gabe-m1-air";
   networking.computerName = "Gabe's M1 Air";
+
+  # ============================================================================
+  # PRIMARY USER
+  # ============================================================================
+  system.primaryUser = "gabe";
 
   # ============================================================================
   # GABE-SPECIFIC NIX PACKAGES
@@ -34,6 +42,14 @@
   system.defaults.dock = {
     # Use default dock settings from common.nix
     # (autohide = false, tilesize = 48)
+  };
+
+  # ============================================================================
+  # USER CONFIGURATION
+  # ============================================================================
+  users.users.gabe = {
+    home = "/Users/gabe";
+    description = "Gabe";
   };
 
   # Enable Rosetta 2 for Intel app compatibility

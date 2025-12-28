@@ -56,7 +56,7 @@
   # USER CONFIGURATION
   # ============================================================================
   users.users.katarina = {
-    home = "/Users/Katarina";
+    home = "/Users/katarina";
     description = "Katarina";
   };
 
