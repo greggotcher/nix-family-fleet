@@ -30,8 +30,10 @@
     casks = [
       # Add Michael's specific apps here
     ];
+
+# Mac App Store apps for Michael
     masApps = {
-      # Add Michael's App Store apps here
+      "GarageBand" = 682658836;    # Music creation software
     };
   };
 
