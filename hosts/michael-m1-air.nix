@@ -36,10 +36,33 @@
   };
 
   # ============================================================================
+  # SYSTEM-SPECIFIC SETTINGS
+  # ============================================================================
+  # Dock configuration for Katarina's M1 Air
+  system.defaults.dock = {
+    # Use default dock settings from common.nix
+    # (autohide = false, tilesize = 48)
+    
+    # Persistent apps in the Dock
+    persistent-apps = [
+      "/Applications/Pages.app"
+      "/Applications/Keynote.app"
+      "/Applications/Safari.app"
+      "/System/Applications/Messages.app"
+      "/System/Applications/Reminders.app"
+      "/System/Applications/Notes.app"
+    ];
+  };
+
+  # ============================================================================
   # USER CONFIGURATION
   # ============================================================================
   users.users.michael = {
     home = "/Users/michael";
     description = "Michael";
   };
+
+
+  # Enable Rosetta 2 for Intel app compatibility
+  # (Already configured in flake.nix)
 }

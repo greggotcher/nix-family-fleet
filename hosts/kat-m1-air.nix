@@ -52,6 +52,14 @@
     ];
   };
 
+  # ============================================================================
+  # USER CONFIGURATION
+  # ============================================================================
+  users.users.katarina = {
+    home = "/Users/Katarina";
+    description = "Katarina";
+  };
+
   # Enable Rosetta 2 for Intel app compatibility
   # (Already configured in flake.nix)
 }
