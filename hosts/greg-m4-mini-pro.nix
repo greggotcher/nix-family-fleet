@@ -56,7 +56,7 @@
       "/System/Applications/Mail.app"
       "/System/Applications/Calendar.app"
       "/System/Applications/Messages.app"
-      "/Applications/DaVinci Resolve.app"
+      "/Applications/DaVinci Resolve/DaVinci Resolve.app"
       "/System/Applications/System Settings.app"
     ];
   };
