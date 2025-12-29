@@ -52,7 +52,7 @@
     # Persistent apps in the Dock
     persistent-apps = [
       "/Applications/Google Chrome.app"
-      "/Applications/Visual Studio Code.app"
+      "/Applications/Nix Apps/Visual Studio Code.app"
       "/System/Applications/Mail.app"
       "/System/Applications/Calendar.app"
       "/System/Applications/Messages.app"
