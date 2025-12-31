@@ -5,9 +5,18 @@
   # Import common configuration
   imports = [ ../common.nix ];
 
-  # Set the hostname
+  # ============================================================================
+  # SYSTEM IDENTIFICATION
+  # ============================================================================
   networking.hostName = "steph-m1-air";
   networking.computerName = "Stephanie's M1 Air";
+
+  # ============================================================================
+  # PRIMARY USER
+  # ============================================================================
+  system.primaryUser = "stephanie";
+  # Set the hostname
+
 
   # ============================================================================
   # STEPHANIE-SPECIFIC NIX PACKAGES
@@ -34,6 +43,14 @@
   system.defaults.dock = {
     # Use default dock settings from common.nix
     # (autohide = false, tilesize = 48)
+  };
+
+  # ============================================================================
+  # USER CONFIGURATION
+  # ============================================================================
+  users.users.stephanie = {
+    home = "/Users/stephanie";
+    description = "Stephanie";
   };
 
   # Enable Rosetta 2 for Intel app compatibility
