@@ -15,8 +15,6 @@
   # PRIMARY USER
   # ============================================================================
   system.primaryUser = "stephanie";
-  # Set the hostname
-
 
   # ============================================================================
   # STEPHANIE-SPECIFIC NIX PACKAGES
