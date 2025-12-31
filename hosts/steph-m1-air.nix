@@ -47,10 +47,12 @@
     # Persistent apps in the Dock
     persistent-apps = [
       "/Applications/Google Chrome.app"
+      "/Applications/Safari.app"
       "/Applications/LibreOffice.app"
       "/System/Applications/Mail.app"
       "/System/Applications/Calendar.app"
       "/System/Applications/Messages.app"
+      "/System/Applications/Notes.app"
       "/System/Applications/System Settings.app"
     ];
   };
