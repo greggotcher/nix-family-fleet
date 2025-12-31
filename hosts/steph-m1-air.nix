@@ -43,6 +43,16 @@
   system.defaults.dock = {
     # Use default dock settings from common.nix
     # (autohide = false, tilesize = 48)
+
+    # Persistent apps in the Dock
+    persistent-apps = [
+      "/Applications/Google Chrome.app"
+      "/Applications/LibreOffice.app"
+      "/System/Applications/Mail.app"
+      "/System/Applications/Calendar.app"
+      "/System/Applications/Messages.app"
+      "/System/Applications/System Settings.app"
+    ];
   };
 
   # ============================================================================
