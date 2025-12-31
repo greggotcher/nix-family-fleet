@@ -41,15 +41,14 @@
   # ============================================================================
   # Dock configuration for Stephanie's M1 Air
   system.defaults.dock = {
-    # Use default dock settings from common.nix
-    # (autohide = false, tilesize = 48)
+    autohide = false;         # Don't auto-hide the dock
+    tilesize = 64;            # Larger icon size for this system
 
     # Persistent apps in the Dock
     persistent-apps = [
       "/Applications/Google Chrome.app"
       "/Applications/Safari.app"
       "/Applications/LibreOffice.app"
-      "/System/Applications/Mail.app"
       "/System/Applications/Calendar.app"
       "/System/Applications/Messages.app"
       "/System/Applications/Notes.app"
